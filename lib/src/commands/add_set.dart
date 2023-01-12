@@ -6,12 +6,17 @@ import 'package:path/path.dart';
 
 class AddSetCommand extends Command {
   @override
-  String get description => 'Add script to a git hook';
+  String get description =>
+      '${name == 'add' ? 'Add' : 'Set'} script to a git hook';
 
   @override
   final String name;
 
   AddSetCommand(this.name);
+
+  @override
+  String get invocation =>
+      'dart run ${runner!.executableName} $name <file> [cmd]';
 
   @override
   Future<void> run() async {
@@ -41,16 +46,17 @@ class AddSetCommand extends Command {
   Future<void> set(String path, String cmd) async {
     final dir = dirname(path);
     if (!Directory(dir).existsSync()) {
-      throw Exception('can\'t create hook, $dir directory doesn\'t exist (try running husky install)');
+      throw Exception(
+          'can\'t create hook, $dir directory doesn\'t exist (try running husky install)');
     }
     File(path).writeAsStringSync('''
 #!/usr/bin/env sh
 . "\$(dirname -- "\$0")/_/husky.sh"
+
 $cmd
 ''');
     if (!Platform.isWindows) {
       Process.runSync('chmod', ['755', path]);
     }
   }
-
 }

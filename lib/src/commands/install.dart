@@ -7,18 +7,22 @@ import 'package:path/path.dart';
 
 class InstallCommand extends Command {
   @override
-  String get description => 'Install git hooks to project';
+  String get description => 'Install git hooks.';
 
   @override
   String get name => 'install';
 
   @override
+  String get invocation =>
+      'dart run ${runner!.executableName} $name [dir] (default: .husky)';
+
+  @override
   Future<void> run() async {
-    // ignore: unrelated_type_equality_checks
-    if (Platform.environment['HUSKY'] == 0) {
+    if (Platform.environment['HUSKY'] == '0') {
       logger.stderr('HUSKY env variable is set to 0, skipping install');
       return;
     }
+
     /// Ensure that we're inside a git repository
     /// If git command is not found, status is null and we should return.
     /// That's why status value needs to be checked explicitly.
@@ -51,12 +55,11 @@ class InstallCommand extends Command {
     }
 
     // Configure repo
-    if (Process.runSync('git', ['config', 'core.hooksPath', dir]).exitCode != 0) {
+    if (Process.runSync('git', ['config', 'core.hooksPath', dir]).exitCode !=
+        0) {
       logger.stderr('Git hooks failed to install');
     } else {
       logger.stderr('Git hooks installed');
     }
-    
   }
-
 }

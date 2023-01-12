@@ -1,7 +1,6 @@
 import 'package:cli_util/cli_logging.dart';
 
 class HuskyLogger extends StandardLogger {
-
   String get prefix => 'husky - ';
 
   @override

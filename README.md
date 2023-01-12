@@ -2,7 +2,7 @@
 
 > Dart version husky (known in JavaScript comunity)
 
-Husky make it easy to manage you Dart and Flutter project's git hooks.
+Husky make it easy to manage your Dart and Flutter project's git hooks.
 
 # Install
 
@@ -17,13 +17,13 @@ dev_dependencies:
 
 ```sh
 dart pub get
-dart pub run husky install
+dart run husky install
 ```
 
 Add a hook:
 
 ```sh
-dart pub run husky add .husky/pre-commit "dart test"
+dart run husky add .husky/pre-commit "dart test"
 git add .husky/pre-commit
 ```
 
