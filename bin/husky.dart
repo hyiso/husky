@@ -1,5 +1,13 @@
-import 'package:husky/husky.dart' as husky;
+import 'dart:io';
 
-void main(List<String> arguments) {
-  husky.Husky().run(arguments);
+import 'package:husky/husky.dart';
+import 'package:husky/src/logger.dart';
+
+void main(List<String> arguments) async {
+  try {
+    await Husky().run(arguments);
+  } catch (e) {
+    logger.stderr(logger.ansi.error(e.toString()));
+    exit(1);
+  }
 }

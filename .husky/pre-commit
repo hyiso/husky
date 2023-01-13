@@ -3,4 +3,4 @@
 
 dart analyze . --fatal-infos
 dart format . --output=none --set-exit-if-changed
-# dart test --reporter expanded
+sh test/all.sh
