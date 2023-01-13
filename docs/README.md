@@ -1,5 +1,3 @@
-# husky
-
 [![Pub Version](https://img.shields.io/pub/v/husky?color=blue)](https://pub.dev/packages/husky)
 [![popularity](https://img.shields.io/pub/popularity/husky?logo=dart)](https://pub.dev/packages/husky/score)
 [![likes](https://img.shields.io/pub/likes/husky?logo=dart)](https://pub.dev/packages/husky/score)
