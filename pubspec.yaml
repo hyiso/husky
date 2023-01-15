@@ -14,5 +14,7 @@ dependencies:
   path: ^1.8.0
 
 dev_dependencies:
+  commitlint_cli: ^0.1.0+1
+  commitlint_config: ^0.1.0
   lints: ^2.0.0
   test: ^1.17.0
