@@ -2,3 +2,4 @@
 docs
 test
 .github
+commitlint.yaml

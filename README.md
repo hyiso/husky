@@ -10,21 +10,21 @@
 
 Husky make it easy to manage your Dart and Flutter project's git hooks.
 
-# Install
+# Usage
 
 Add husky to your `dev_dependencies` in pubspec.yaml
-
 ```yaml
 dev_dependencies:
   husky: latest
 ```
 
-# Usage
+Get dependencies and run husky insall.
 
 ```sh
 dart pub get
 dart run husky install
 ```
+This will generate `.husky` directory under your project's root path, make sure to commit `.husky` to git.
 
 Add a hook:
 
@@ -39,3 +39,7 @@ Make a commit:
 git commit -m "Keep calm and commit"
 # `dart test` will run
 ```
+
+# Documentation
+
+See [documentation](https://hyiso.github.io/husky)
