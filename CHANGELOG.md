@@ -1,3 +1,7 @@
+## 0.1.4
+
+- Fix installation failure in git submodule.
+
 ## 0.1.3
 
 - Add documentation link.

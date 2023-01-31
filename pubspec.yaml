@@ -1,6 +1,6 @@
 name: husky
 description: Husky make it easy to manage your Dart and Flutter project's git hooks.
-version: 0.1.3
+version: 0.1.4
 homepage: https://github.com/hyiso/husky
 repository: https://github.com/hyiso/husky
 documentation: https://hyiso.github.io/husky
