@@ -38,7 +38,7 @@ class InstallCommand extends Command {
       logger.stderr('.. install dir outside of cwd is not allowed.');
       return;
     }
-    if (!Directory('.git').existsSync()) {
+    if (!Directory('.git').existsSync() && !File('.git').existsSync()) {
       throw Exception('.git can\'t be found.');
     }
     // Create .husky/_
