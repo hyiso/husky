@@ -24,7 +24,7 @@ Get dependencies and run husky insall.
 dart pub get
 dart run husky install
 ```
-This will generate `.husky` directory under your project's root path, make sure to commit `.husky` to git.
+This will generate `.husky` directory under your project's root path, make sure to commit `.husky` to git repository.
 
 Add a hook:
 
@@ -40,6 +40,6 @@ git commit -m "Keep calm and commit"
 # `dart test` will run
 ```
 
-# Documentation
-
-See [documentation](https://hyiso.github.io/husky)
+# Articles
+- [Use husky to manage git hooks for your Dart and Flutter projects](https://medium.com/p/dbb8e09caabf)
+- [Use husky and commitlint to lint commit messages for your Dart and Flutter projects](https://medium.com/p/74b5d2757061)

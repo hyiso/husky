@@ -1,5 +1,2 @@
-.husky
-docs
 test
-.github
 commitlint.yaml
