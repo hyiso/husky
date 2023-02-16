@@ -1,3 +1,7 @@
+## 0.1.4+2
+
+- Add more usage guidance in README.md
+
 ## 0.1.4+1
 
 - Remove docs
