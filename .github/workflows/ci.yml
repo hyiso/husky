@@ -31,4 +31,4 @@ jobs:
         run: dart analyze
 
       - name: Test
-        run:  sh test/all.sh
+        run:  dart test

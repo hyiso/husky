@@ -27,7 +27,8 @@ class InstallCommand extends Command {
     /// If git command is not found, status is null and we should return.
     /// That's why status value needs to be checked explicitly.
     if ((Process.runSync('git', ['rev-parse'])).exitCode != 0) {
-      logger.stderr('git command not found, skipping install');
+      logger.stderr(
+          'not a git repository (or any of the parent directories), skipping install');
       return;
     }
     String dir = '.husky';
