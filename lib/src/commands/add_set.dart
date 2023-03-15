@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:args/command_runner.dart';
-import 'package:husky/src/logger.dart';
 import 'package:path/path.dart';
 
 class AddSetCommand extends Command {
@@ -37,7 +36,7 @@ class AddSetCommand extends Command {
     final file = File(path);
     if (file.existsSync()) {
       file.writeAsStringSync('$cmd\n', mode: FileMode.append);
-      logger.stderr('updated ${file.path}');
+      stderr.writeln('husky - updated ${file.path}');
     } else {
       await set(file.path, cmd);
     }

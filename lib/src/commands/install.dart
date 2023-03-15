@@ -2,7 +2,6 @@ import 'dart:io';
 import 'dart:isolate';
 
 import 'package:args/command_runner.dart';
-import 'package:husky/src/logger.dart';
 import 'package:path/path.dart';
 
 class InstallCommand extends Command {
@@ -19,7 +18,8 @@ class InstallCommand extends Command {
   @override
   Future<void> run() async {
     if (Platform.environment['HUSKY'] == '0') {
-      logger.stderr('HUSKY env variable is set to 0, skipping install');
+      stderr
+          .writeln('husky - HUSKY env variable is set to 0, skipping install');
       return;
     }
 
@@ -27,8 +27,8 @@ class InstallCommand extends Command {
     /// If git command is not found, status is null and we should return.
     /// That's why status value needs to be checked explicitly.
     if ((Process.runSync('git', ['rev-parse'])).exitCode != 0) {
-      logger.stderr(
-          'not a git repository (or any of the parent directories), skipping install');
+      stderr.writeln(
+          'husky - not a git repository (or any of the parent directories), skipping install');
       return;
     }
     String dir = '.husky';
@@ -36,7 +36,7 @@ class InstallCommand extends Command {
       dir = argResults!.rest.first;
     }
     if (!absolute(dir).startsWith(Directory.current.absolute.path)) {
-      logger.stderr('.. install dir outside of cwd is not allowed.');
+      stderr.writeln('husky - .. install dir outside of cwd is not allowed.');
       return;
     }
     if (!Directory('.git').existsSync() && !File('.git').existsSync()) {
@@ -58,9 +58,9 @@ class InstallCommand extends Command {
     // Configure repo
     if (Process.runSync('git', ['config', 'core.hooksPath', dir]).exitCode !=
         0) {
-      logger.stderr('Git hooks failed to install');
+      stderr.writeln('husky - Git hooks failed to install');
     } else {
-      logger.stderr('Git hooks installed');
+      stderr.writeln('husky - Git hooks installed');
     }
   }
 }
