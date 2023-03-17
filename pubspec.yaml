@@ -13,11 +13,10 @@ dependencies:
   path: ^1.8.0
 
 dev_dependencies:
-  commitlint_cli: ^0.2.1
-  commitlint_config: ^0.1.1
-  lint_staged: ^0.1.5
+  commitlint_cli: ^0.3.0-dev.2
+  lint_staged: ^0.2.0-dev.0
   lints: ^2.0.0
   test: ^1.17.0
 
 lint_staged:
-  '.dart': dart fix --apply && dart format --fix
+  'lib/**.dart': dart fix --apply && dart format --fix
