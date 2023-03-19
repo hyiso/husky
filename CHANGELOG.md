@@ -1,3 +1,7 @@
+## 0.1.5
+
+- Remove `cli_utils` depdency
+
 ## 0.1.4+2
 
 - Add more usage guidance in README.md
