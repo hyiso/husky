@@ -20,21 +20,6 @@ Future<void> setupGit(String dir) async {
       workingDirectory: dir);
 }
 
-Future<void> setupPackage(String dir) async {
-  if (!await Directory(dir).exists()) {
-    await Directory(dir).create(recursive: true);
-  }
-
-  /// Create dart package
-  await Process.run('dart', ['create', '-t', 'package', '.', '--force'],
-      workingDirectory: dir);
-
-  /// Add husky to dev_dependencies
-  await Process.run('dart',
-      ['pub', 'add', '--dev', 'husky', '--path', Directory.current.path],
-      workingDirectory: dir);
-}
-
 Future<ProcessResult> getHooksPath(String workingDirectory) async {
   return await Process.run('git', ['config', 'core.hooksPath'],
       workingDirectory: workingDirectory);

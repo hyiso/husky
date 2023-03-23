@@ -1,0 +1,1 @@
+See example usage in [husky repository](https://github.com/hyiso/husky)

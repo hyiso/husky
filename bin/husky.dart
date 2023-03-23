@@ -4,7 +4,7 @@ import 'package:husky/husky.dart';
 
 void main(List<String> arguments) async {
   try {
-    await Husky().run(arguments);
+    await HuskyRunner().run(arguments);
   } catch (e) {
     String message = 'husky - $e';
 
