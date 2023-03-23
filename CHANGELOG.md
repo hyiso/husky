@@ -1,3 +1,7 @@
+## 0.1.6
+
+- Optimize test performance.
+
 ## 0.1.5
 
 - Remove `cli_utils` depdency
