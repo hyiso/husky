@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-VERBOSE=true dart run commitlint_cli --edit $1
+dart run commitlint_cli --edit $1
