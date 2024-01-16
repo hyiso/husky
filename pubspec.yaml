@@ -14,7 +14,7 @@ dependencies:
 
 dev_dependencies:
   commitlint_cli: ">=0.6.1 <0.8.0"
-  lint_staged: ^0.4.0
+  lint_staged: ^0.5.0
   lints: ^2.0.0
   test: ^1.17.0
 
