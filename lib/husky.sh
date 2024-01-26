@@ -14,9 +14,13 @@ if [ -z "$husky_skip_init" ]; then
     exit 0
   fi
 
+  for f in "${XDG_CONFIG_HOME:-$HOME/.config}/husky/init.sh" "$HOME/.huskyrc.sh" "$HOME/.huskyrc"; do
+  	# shellcheck disable=SC1090
+  	[ -f "$f" ] && . "$f"
+  done
+
   if [ -f ~/.huskyrc ]; then
-    debug "sourcing ~/.huskyrc"
-    . ~/.huskyrc
+    echo "~/.huskyrc is deprecated. Please move the file to ~/.config/husky/init.sh"
   fi
 
   readonly husky_skip_init=1
