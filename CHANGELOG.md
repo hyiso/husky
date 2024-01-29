@@ -1,3 +1,6 @@
+## 0.1.7
+- feat: adapt new configuration file to `typicode/husky`
+
 ## 0.1.6
 
 - Optimize test performance.
